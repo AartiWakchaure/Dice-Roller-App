@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller App</title>
+    <style>
+        body {
+            background-color: #ffcc99;
+        }
+
+        .dice-roller-container {
+            background-color: #fff;
+            width: 400px;
+            height: 400px;
+            display: block;
+            margin: 30px auto;
+            border: 5px solid black;
+            border-radius: 20px;
+        }
+
+        .dice {
+            width: 80px;
+            display: block;
+            margin: 40px auto;
+
+        }
+        .dice-text{
+            text-align: center;
+        }
+
+        .dice-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: tomato;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .dice-btn:hover{
+box-shadow: 1px 1px 1px 1px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dice-roller-container">
+        <img src="./one.png" class="dice" id="dice">
+        <h3 class="dice-text" id="text">0</h3>
+        <button class="dice-btn" onclick="roller()">Roll The Dice</button>
+
+    </div>
+    <script>
+        function roller() {
+            const max = 1;
+            const min = 6;
+            const number = Math.floor(Math.random() * (max - min)) + min;
+            diceImg=document.getElementById("dice");
+            const dicetext=document.getElementById("text");
+            if (number == 1) {
+                diceImg.src = "./one.png";
+                dicetext.innerHTML=1;
+
+            }
+            else if (number == 2) {
+               diceImg.src = "./two.png";
+               dicetext.innerHTML=2;
+
+            }
+            else if (number == 3) {
+                diceImg.src = "./three.png";
+                dicetext.innerHTML=3;
+
+            }
+            else if (number == 4) {
+                diceImg.src = "./four.png";
+                dicetext.innerHTML=4;
+
+            }
+            else if (number == 5) {
+                diceImg.src = "./five.png";
+                dicetext.innerHTML=5;
+
+            }
+            else {
+                diceImg.src = "./six.png";
+                dicetext.innerHTML=6;
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
